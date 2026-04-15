@@ -1,67 +1,68 @@
-﻿# SciReview AI
+# SciReview AI
 
-SciReview AI is a hackathon MVP for scientific document review. The application analyzes scientific technical specifications, grant applications, and R&D documents, identifies structural and semantic weaknesses, scores document quality, and proposes an improved expert-style revision.
+SciReview AI — это MVP хакатона для рецензирования научных документов. Приложение анализирует научные технические спецификации, заявки на гранты и документы НИОКР, выявляет структурные и семантические недостатки, оценивает качество документов и предлагает улучшенный вариант рецензирования в экспертном стиле.
 
-## What problem it solves
+## Какую проблему оно решает
 
-Scientific technical specifications and research proposals are often incomplete, vague, inconsistent, or difficult to assess quickly. SciReview AI helps teams and reviewers reduce manual review time and improve document quality before submission or expert evaluation.
+Научные технические спецификации и исследовательские предложения часто бывают неполными, расплывчатыми, противоречивыми или их трудно быстро оценить. SciReview AI помогает командам и рецензентам сократить время ручной проверки и улучшить качество документов перед отправкой или экспертной оценкой.
 
-## Core capabilities
+## Основные возможности
 
-- Upload and parse TXT, PDF, and DOCX documents
-- Analyze scientific technical specifications, grant applications, and R&D documents
-- Detect missing sections, weak formulations, KPI gaps, timeline issues, and semantic inconsistencies
-- Produce a quality score with criterion-level breakdown
-- Generate recommendations and an improved version of the document
-- Use compressed expert analysis mode for long documents to stay within LLM limits
-- Work in baseline mode even when external AI access is unavailable
+- Загрузка и анализ документов в форматах TXT, PDF и DOCX
+- Анализ научных технических спецификаций, заявок на гранты и документов НИОКР
+- Выявление отсутствующих разделов, слабых формулировок, пробелов в KPI, проблем с хронологией и семантических несоответствий
+- Оценка качества с разбивкой по критериям
+- Генерация рекомендаций и улучшенной версии документа
+- Использование режима сжатого экспертного анализа для длинных документов, чтобы оставаться в пределах ограничений LLM
+- Работа в базовом режиме даже при отсутствии доступа к внешнему ИИ
 
-## Scientific document focus
+## Ориентация на научные документы
 
-SciReview AI is designed specifically for:
+SciReview AI разработан специально для:
 
-- scientific technical specifications
-- grant applications
-- R&D / NIOKR documentation
-- research-oriented supporting documents
+- научных технических спецификаций
+- заявок на гранты
+- документации НИОКР / NIOKR
+- сопроводительных документов, ориентированных на исследования
 
-The review logic combines document structure checks, semantic consistency analysis, and external AI-assisted evaluation when a valid API key is provided.
+Логика проверки сочетает в себе проверку структуры документа, анализ семантической согласованности и оценку с помощью внешнего ИИ при предоставлении действительного ключа API.
 
-## Tech stack
+
+## Технологический стек
 
 - React + TypeScript
 - Vite
 - Tailwind CSS
 - Radix UI
 - Vitest
-- Groq API integration for extended analysis
-- PDF parsing with `pdfjs-dist`
-- DOCX parsing with `mammoth`
-- PWA support with `vite-plugin-pwa`
+- Интеграция API Groq для расширенного анализа
+- Парсинг PDF с помощью `pdfjs-dist`
+- Парсинг DOCX с помощью `mammoth`
+- Поддержка PWA с помощью `vite-plugin-pwa`
 
-## Local запуск
+## Локальный запуск
 
-1. Install dependencies:
+1. Установите зависимости:
 
 ```bash
 npm install
 ```
 
-2. Create a local environment file:
+2. Создайте локальный файл среды:
 
 ```bash
 cp .env.example .env
 ```
 
-3. Start the development server:
+3. Запустите сервер разработки:
 
 ```bash
 npm run dev
 ```
 
-The application will usually be available at `http://localhost:8080`.
+Приложение обычно доступно по адресу `http://localhost:8080`.
 
-## Build and test
+## Сборка и тестирование
 
 ```bash
 npm run typecheck
@@ -69,27 +70,29 @@ npm run test
 npm run build
 ```
 
-To preview the production build locally:
+Для предварительного просмотра сборки в продакшене локально:
 
 ```bash
 npm run preview
 ```
 
-## MVP status
+## Статус MVP
 
-Current status: hackathon-ready MVP.
+Текущий статус: MVP, готовый к хакатону.
 
-Implemented:
+Реализовано:
 
-- clean single-product SciReview AI interface
-- scientific document analysis flow
-- PDF/DOCX/TXT ingestion
-- long-document prompt compression for stable extended analysis
-- baseline fallback mode
-- PWA-ready frontend for laptop and mobile demo
+- Чистый интерфейс SciReview AI для одного продукта
+- Процесс анализа научных документов
+- Обработка PDF/DOCX/TXT
+- Сжатие подсказок для длинных документов для стабильного расширенного анализа
+- Базовый резервный режим
+- Готовый к PWA интерфейс для демонстрации на ноутбуках и мобильных устройствах
 
-## Notes for reviewers and jury
+## Примечания для рецензентов и жюри
 
-- The project is optimized for scientific technical specification review rather than generic chat.
-- Extended AI analysis requires a valid API key in local environment or the hidden access settings panel.
-- If external AI is unavailable, the application still performs baseline structural and semantic review.
+- Проект оптимизирован для обзора научных технических спецификаций, а не для общего чата.
+
+- Для расширенного анализа с помощью ИИ требуется действительный ключ API в локальной среде или скрытая панель настроек доступа.
+
+- Если внешний ИИ недоступен, приложение все равно выполняет базовый структурный и семантический анализ.
